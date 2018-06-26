@@ -11,7 +11,7 @@ const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => 
                 label="Title"
                 value={course.title}
                 onChange={onChange}
-                error={errors.title} />
+                errors={errors.title} />
             
             <SelectInput 
                 name="authorId"
@@ -20,21 +20,21 @@ const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => 
                 defaultOption="Select Author"
                 options={allAuthors}
                 onChange={onChange}
-                error={errors.authorId}/>
+                errors={errors.authorId}/>
 
             <TextInput 
                 name="category"
                 label="Category"
                 value={course.category}
                 onChange={onChange}
-                error={errors.category} />
+                errors={errors.category} />
 
             <TextInput 
                 name="length"
                 label="Length"
                 value={course.length}
                 onChange={onChange}
-                error={errors.length} />
+                errors={errors.length} />
 
             <input 
                 type="submit"
@@ -53,7 +53,7 @@ CourseForm.propTypes = {
     onSave: React.PropTypes.func.isRequired,
     onChange: React.PropTypes.func.isRequired,
     loading: React.PropTypes.bool,
-    erros: React.PropTypes.object
+    errors: React.PropTypes.object
 };
 
 export default CourseForm;
