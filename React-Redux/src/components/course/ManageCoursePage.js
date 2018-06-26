@@ -28,7 +28,7 @@ class ManageCoursePage extends React.Component {
     }
 }
 
-ManageCoursePage.PropTypes = {
+ManageCoursePage.propTypes = {
     course: PropTypes.object.isRequired
 };
 
