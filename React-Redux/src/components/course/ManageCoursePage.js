@@ -22,7 +22,7 @@ class ManageCoursePage extends React.Component {
                 allAuthors={[]}
                 course={this.state.course}
                 errors={this.state.errors}
-                />
+            />
             </div>   
         );
     }
