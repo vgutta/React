@@ -1,24 +1,37 @@
 import React, {Component} from 'react';
 import Square from './Square';
+import './Board.css';
 
 class Board extends Component {
     constructor(props){
         super(props);
         this.state = {
-            squares: Array(9).fill(null)
+            squares: Array(9).fill(null),
+            XisNext: true
         };
+    }
+    clickHandler(i){
+        const squares = this.state.squares.slice();
+        squares[i] = this.state.XisNext ? 'X': "O";
+        this.setState({
+            squares: squares,
+            XisNext: !this.state.XisNext
+        });
     }
 
     renderSquare(i){
-        return (<Square />);
+        return (<Square 
+                value={this.state.squares[i]}
+                clickHandler={() => this.clickHandler(i)}
+                />);
     }
 
     render(){
-        const status = "Next Player: X";
+        const status = this.state.XisNext ? "Next Player: X": "Next Player: O";
 
         return(
-            <div className="board">
-                <div className="gameStatus">{status}</div>
+            <div>
+                
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
